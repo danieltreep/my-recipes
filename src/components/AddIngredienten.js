@@ -45,37 +45,37 @@ export default function AddIngredienten() {
 
     return (
         <fieldset>
-                <label>Ingredienten</label>
-                <div className='ingredientenContainer'>
-                    {ingredienten.map((ingredient, index) => {
-                        return(
-                            <div key={index} className='ingredient'>
-                            <button onClick={(e) => handleRemove(index, e)}>x</button>
-                                <p>{ingredient.naam}</p>
-                                <p>{ingredient.hoeveelheid}</p>
-                                <p>{ingredient.eenheid}</p>
-                            </div>
-                        )   
-                    })}
-                </div>
-                
-                <fieldset>
-                    <input type='text' placeholder='Ingredient' id='ingredient'></input>
-                    <input type='number' placeholder='Hoeveelheid' id='hoeveelheid'></input>
-                    <label htmlFor='eenheid'></label>
-                    <select id='eenheid' defaultValue={''}>
-                        <option></option>
-                        <option>mg</option>
-                        <option>g</option>
-                        <option>kg</option>
-                        <option>ml</option>
-                        <option>l</option>
-                        <option>tl</option>
-                        <option>el</option>
-                    </select>
-                    <button onClick={(e) => handleAddIngredient(e)}>Add ingredient</button>
-                </fieldset>
-                
-            </fieldset>
+            <label>Ingredienten</label>
+            <div className='ingredientenContainer'>
+                {ingredienten.map((ingredient, index) => {
+                    return(
+                        <div key={index} className='ingredient'>
+                        <button onClick={(e) => handleRemove(index, e)}>x</button>
+                            <p>{ingredient.naam}</p>
+                            <p>{ingredient.hoeveelheid}</p>
+                            <p>{ingredient.eenheid}</p>
+                        </div>
+                    )   
+                })}
+            </div>
+            
+            <div>
+                <input type='text' placeholder='Ingredient' id='ingredient'></input>
+                <input type='number' placeholder='Hoeveelheid' id='hoeveelheid'></input>
+                <label htmlFor='eenheid'></label>
+                <select id='eenheid' defaultValue={''}>
+                    <option></option>
+                    <option>mg</option>
+                    <option>g</option>
+                    <option>kg</option>
+                    <option>ml</option>
+                    <option>l</option>
+                    <option>tl</option>
+                    <option>el</option>
+                </select>
+                <button onClick={(e) => handleAddIngredient(e)}>Add ingredient</button>
+            
+            </div>   
+        </fieldset>
     )
 }

@@ -15,6 +15,10 @@ export default function AddTitel() {
                 <option value='dessert'>Dessert</option>
                 <option value='bakken'>Bakken</option>
             </select>
+            <label htmlFor='duur'>Duur</label>
+            <input id='duur' type='number'></input>
+            <label htmlFor='duurEenheid'>Eenheid</label>
+            <p>min</p>
         </fieldset>
     )
 }
