@@ -36,22 +36,32 @@ export default function AddStappen() {
     return (
         <fieldset>
             <div>
+                <h2>Stappen</h2>
                 {stappen.map((stap, index) => {
                     return(
                         <div className='stap' key={index}>
-
-                            <h3><span>{index +1}.</span> {stap.titel}</h3>
+                            <div className='stapTitel'>
+                                <svg onClick={(e) => handleRemove(e, index)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 10L10 14" stroke="#1B1B1B" strokeWidth="1.5" strokeLinecap="round"/>
+                                    <path d="M14 14L10 10" stroke="#1B1B1B" strokeWidth="1.5" strokeLinecap="round"/>
+                                    <path d="M21.25 12C21.25 6.89137 17.1086 2.75 12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12Z" stroke="#1B1B1B" strokeWidth="1.5"/>
+                                </svg>
+                                <h3><span>{index +1}.</span> {stap.titel}</h3>
+                            </div>
+                            
                             <p className='beschrijving'>{stap.beschrijving}</p>
-                            <button onClick={(e) => handleRemove(e, index)}>X</button>
+                            
+                                
+                            
                         </div>
                     )
                 })}
             </div>
             
-            <label htmlFor='stapTitel'>Titel</label>
-            <input id='stapTitel' type='text'></input>
-            <label htmlFor='beschrijving'>Beschrijving</label>
-            <textarea id='beschrijving'></textarea>
+            
+            <input id='stapTitel' type='text' placeholder='Titel'></input>
+            
+            <textarea id='beschrijving' placeholder='Beschrijving' rows='10'></textarea>
             <button onClick={() => addStep()}>Voeg stap toe</button>
             
         </fieldset>

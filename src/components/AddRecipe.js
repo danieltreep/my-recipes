@@ -3,7 +3,7 @@ import AddIngredienten from './AddIngredienten'
 import AddStappen from './AddStappen'
 import AddTitel from './AddTitel'
 
-export default function AddRecipe() {
+export default function AddRecipe({handleReturn}) {
 
     const [recept, setRecept] = useState(
         {
@@ -50,15 +50,15 @@ export default function AddRecipe() {
     return (
         
         
-        <form onSubmit={(e) => handleSubmit(e)}>
-        
-            <AddTitel />
+        <form onSubmit={(e) => handleSubmit(e)} className='addRecipePage'>
+
+            <AddTitel handleReturn={handleReturn}/>
         
             <AddIngredienten />
         
             <AddStappen />
 
-            <button type='submit'>Voeg recept toe aan collectie</button>
+            <button type='submit' id='submit'>Voeg recept toe aan collectie</button>
         </form>
         
        

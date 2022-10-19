@@ -5,23 +5,20 @@ import ReceptenContainer from './ReceptenContainer'
 
 export default function ReceptenPagina({receptenLijst}) {
 
-    const [show, setShow] = useState(false)
-    const [selected, setSelected] = useState(null)
+    
+    
+    const [showModal, setShowModal] = useState(false)
 
-    function showRecept(index) {
-        console.log(`clicked ${index}`)
-        setSelected(receptenLijst[index]);
-        setShow(true);
-    }
+    
 
     function handleReturn() {
-        setShow(false);
+        setShowModal(false);
     }
+
     return (
         <section className='receptenPagina'>
 
-            {/* {show ? <Recept recept={selected} handleReturn={handleReturn}/> : <ReceptenContainer showRecept={showRecept} receptenLijst={receptenLijst}/>} */}
-            <AddRecipe />
+            {showModal ?  <AddRecipe handleReturn={handleReturn}/> : <ReceptenContainer showModal={setShowModal} receptenLijst={receptenLijst}/>}
         </section>
     )
 }

@@ -3,7 +3,7 @@ import '../css/recept.css'
 import Stappen from './Stappen'
 import Ingredienten from './Ingredienten'
 import ReceptHeader from './ReceptHeader'
-import food from '../images/food.jpg'
+import food from '../images/bg.jpg'
 
 export default function Recept({recept, handleReturn}) {
 
